@@ -1,0 +1,13 @@
+back-end divisão:
+BD LIVROS Carlos + Italo
+Match MARCOS
+
+
+CRUD das controllers + models:
+Comentary Carlos
+User Marcos
+Book Italo
+Match Carlos
+preferences Italo
+
+
