@@ -24,14 +24,7 @@ A aplicação consiste em um site de preferência de livros, onde os dados de pr
 ![Modelo Conceitual](https://github.com/acenelio/assets/raw/main/sds1/modelo-conceitual.png)
 
 # Tecnologias utilizadas
-## Back end
-- Ruby
-- Rails
-- Rubocop
-- Rspec
-- Factory bot
-- Panko
-- simplecov
+
 ## Front end
 - HTML / CSS / JS 
 - ReactJS
@@ -46,18 +39,6 @@ A aplicação consiste em um site de preferência de livros, onde os dados de pr
 
 # Como executar o projeto
 
-## Back end
-Pré-requisitos: ruby 2.7.0
-
-```bash
-# clonar repositório
-git clone git@github.com:LuisFlexa/projeto_MP.git
-
-# entrar na pasta do projeto back end
-cd back-end
-
-
-```
 ## Front end
 Pré-requisitos: npm 9.5.1, node 18.16.0, pnpm 8.6.5
 
