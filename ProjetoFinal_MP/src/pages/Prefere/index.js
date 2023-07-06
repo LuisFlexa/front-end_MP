@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import './style.css';
 
+/**
+ * @brief Componente que representa o formulário de preferências.
+ * @returns {JSX.Element} Componente do formulário de preferências.
+ */
 function FormularioPreferencias() {
 
   const navigate = useNavigate();
@@ -23,6 +27,10 @@ function FormularioPreferencias() {
     musical: false
   });
 
+  /**
+   * @brief Manipula a alteração de um campo de preferência.
+   * @param {Object} event - O evento de alteração.
+   */
   const handleChange = (event) => {
     const { name, checked } = event.target;
     setPreferencias((prevPreferencias) => ({
@@ -31,6 +39,10 @@ function FormularioPreferencias() {
     }));
   };
 
+  /**
+   * @brief Manipula o envio do formulário de preferências.
+   * @param {Object} event - O evento de envio do formulário.
+   */
   const handleSubmit = (event) => {
     event.preventDefault();
   const selectedCount = Object.values(preferencias).filter(Boolean).length;
