@@ -1,0 +1,42 @@
+.page-wrapper {
+    overflow-x: hidden;
+    width: 100%;
+    height: 100vh;
+}
+
+.btn-voltar{
+    margin: 1rem 1rem;
+    background: #6654da;
+    border: none;
+    cursor: pointer;
+    border-radius: 1rem;
+    color: white;
+    padding: 0.8rem 2rem;
+    font-size: 100%;
+    transition: all 0.3s;
+}
+
+.botaoDiv {
+    margin: 2.5rem 1rem;
+    display: flex;
+    justify-content: center;
+}
+.btn-voltar:hover {
+    background: #5848c2;
+}
+
+.btn-loadMore {
+    background: #00ff88;
+    border: none;
+    cursor: pointer;
+    border-radius: 1rem;
+    color: #2b134b;
+    padding: 0.8rem 2rem;
+    font-size: 100%;
+    font-weight: 700;
+    transition: all 0.3s;
+}
+
+.btn-loadMore:hover {
+    background: #5848c2;
+}

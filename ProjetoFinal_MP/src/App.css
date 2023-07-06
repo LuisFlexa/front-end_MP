@@ -1,0 +1,331 @@
+@font-face {
+  font-family: 'Agency FB';
+  src: url('./fonts/agency_fb.ttf') format('ttf');
+}
+
+body {
+  background-color: #231b3b;
+}
+
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+}
+
+.botao_Logo {
+  margin: 44px 65px 94px 65px;
+  background: #b5aad7;
+  border-radius: 15px;
+  border: none;
+  color: #ffffff;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.TextoSite {
+  font-family: "Agency FB", sans-serif;
+  font-size: 40px;
+  color: #b5aad7;
+  margin-bottom: 30px;
+}
+
+.caixa_botoes {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5px;
+}
+
+.custom_button {
+  border: none;
+  padding: 7px 14px;
+  margin: 0 3px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color:#b5aad7;
+  color: #000000;
+}
+
+.custom_buttonS {
+  border: none;
+  padding: 7px 14px;
+  margin: 0 3px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 15px;
+  background-color:#b5aad7;
+  color: #000000;
+}
+
+.custom_button:hover {
+  background-color: #74fcfc;
+}
+
+.custom_buttonS:hover {
+  color: white;
+  background-color: red;
+}
+
+.topo {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.topoS {
+  position: absolute;
+  top: 8px;
+  right: 200px;
+}
+
+.topoA {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+}
+
+.topoE {
+  position: absolute;
+  top: 0px;
+  right: 1330px;
+}
+
+.topoEs {
+  position: absolute;
+  top: 0px;
+  right: 1240px;
+}
+
+.link_perfil {
+  display: inline-block;
+  color: #ff7fe8;
+  text-decoration: none;
+  font-size: 18px;
+  margin-right: 5px;
+}
+
+.link_login {
+  display: inline-block;
+  color: #ff7fe8;
+  text-decoration: none;
+}
+
+.link_cadastro {
+  display: inline-block;
+  color: #ff7fe8;
+  text-decoration: none;
+}
+
+.link_login::after {
+  content: "|";
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.icone_perfil {
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.icone_perfilA {
+  vertical-align: middle+1px;
+  margin-left: 5px;
+}
+
+.link_perfil::after {
+  content: "|";
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.divBusca{
+  background-color:#ff7fe8;
+  border:solid 1px;
+  border-radius:15px;
+  width:300px;
+  height:32px;
+}
+
+.txtBusca{
+  float:left;
+  background-color:transparent;
+  padding-left:5px;
+  font-style:italic;
+  font-size:18px;
+  border:none;
+  border-radius:15px;
+  height:30px;
+  width:260px;
+}
+
+.table-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 2px solid #74fcfc;
+  margin-bottom: 20px;
+}
+
+.table th,
+.table td {
+  padding: 10px;
+  border: 1px solid #74fcfc;
+  text-align: left;
+}
+
+.table th {
+  background-color: #231b3b;
+  font-weight: bold;
+}
+
+.table tr:nth-child(even) {
+  background-color: #6f658c;
+}
+
+.table tr:nth-child(odd) {
+  background-color: #483778;
+}
+
+.table tr:hover {
+  background-color: #231b3b;
+}
+
+.texto-branco {
+  color: white;
+}
+
+.comment-input {
+  width: 300px;
+  height: 100px;
+  border: 1px solid #74fcfc;
+  border-radius: 5px;
+  padding: 5px;
+  resize: none;
+  background-color:#483778;
+}
+
+.like-button,
+.dislike-button {
+  background-color: transparent;
+  border: none;
+  margin-right: 10px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.like-button:hover {
+  color: green;
+}
+
+.dislike-button:hover {
+  color: red;
+}
+
+.like-button.clicked {
+  color: green;
+}
+
+.dislike-button.clicked {
+  color: red;
+}
+
+button:focus {
+  outline: none;
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.custom_button2 {
+  border: none;
+  padding: 4px 8px;
+  margin: 0 10px;
+  border-radius:15px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #eee;
+  color: #333;
+}
+
+.prefereButton {
+  margin-bottom: 10px;
+  background-color: #483778;
+  color: white;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.prefereButton:hover {
+  background-color: #332656;
+}
+
+.btn {
+  width: 80%;
+  background: #74fcfc;
+  border: none;
+  cursor: pointer;
+  border-radius: 1rem;
+  color: #2b134b;
+  padding: 0.8rem 2rem;
+  font-size: 100%;
+  font-weight: 700;
+  transition: all 0.3s;
+}
+
+.btn:hover {
+  background: #5848c2;
+}

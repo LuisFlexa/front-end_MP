@@ -1,0 +1,39 @@
+.box {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #b5aad7;
+  border-radius: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.preferences-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.checkbox-group {
+  margin-bottom: 5px;
+  align-items: center;
+}
+
+.checkbox-group label {
+  display: block;
+  margin-bottom: 5px;
+  align-items: center;
+}
+
+.btnS {
+  background-color: #74fcfc;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: black;
+}
+
+.btnS:hover {
+  background-color: #54bdbd;
+}

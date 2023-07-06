@@ -1,0 +1,100 @@
+.Container {
+    overflow-x: hidden;
+    width: 100%;
+    height: 100vh;
+}
+
+.Container h1 {
+    text-align: center;
+    margin: 4rem 0;
+    color: white;
+}
+
+.BookList {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    column-gap: 3rem;
+    row-gap: 4rem;
+}
+
+.Book {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Book img {
+    width: 180px;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+}
+
+.Book div {
+    text-align: center;
+}
+.Book span {
+    font-weight: bold;
+    font-size: 120%;
+    color: white;
+    text-align: center;
+}
+
+.Book a {
+    transition: all 0.3s;
+}
+
+.Book a:hover {
+    transform:
+     scale(1.1);
+}
+
+.btn-voltar{
+    margin: 1rem 1rem;
+    background: #6654da;
+    border: none;
+    cursor: pointer;
+    border-radius: 1rem;
+    color: white;
+    padding: 0.8rem 2rem;
+    font-size: 100%;
+    transition: all 0.3s;
+}
+
+.botaoDiv {
+    margin: 2.5rem 1rem;
+    display: flex;
+    justify-content: center;
+}
+.btn-voltar:hover {
+    background: #5848c2;
+}
+
+.botaoDiv {
+    margin: 2.5rem 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.btn-loadMore {
+    background: #00ff88;
+    border: none;
+    cursor: pointer;
+    border-radius: 1rem;
+    color: #2b134b;
+    padding: 0.8rem 2rem;
+    font-size: 100%;
+    font-weight: 700;
+    transition: all 0.3s;
+}
+
+.btn-loadMore:hover {
+    background: #5848c2;
+}
+
+.Book p {
+    font-weight: bold;
+    font-size: 90%;
+    color: rgb(170, 167, 167);
+    text-align: center;
+}
