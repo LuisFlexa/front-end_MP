@@ -4,6 +4,11 @@ import useAuth from "../../hooks/useAuth";
 import * as C from "./styles";
 import './estilo.css';
 
+/**
+ * @brief Componente de filmes.
+ *
+ * Este componente exibe uma lista de filmes populares e permite filtrá-los por gênero.
+ */
 const Movies = () => {
   const { signout } = useAuth();
   const navigate = useNavigate();
@@ -16,6 +21,11 @@ const Movies = () => {
     fetchPopularMovies();
   }, []);
 
+  /**
+   * @brief Busca os filmes populares.
+   *
+   * Esta função busca os filmes populares da API e atualiza o estado do componente com os filmes encontrados.
+   */
   const fetchPopularMovies = () => {
     fetch(
       `https://api.themoviedb.org/3/movie/popular?api_key=d6921ce6a56573002e9180ba12b4f5a0&language=en-US&page=1`
@@ -24,6 +34,11 @@ const Movies = () => {
       .then((data) => setMovies(data.results));
   };
 
+  /**
+   * @brief Busca mais filmes.
+   *
+   * Esta função busca a próxima página de filmes populares da API e adiciona os filmes encontrados ao estado do componente.
+   */
   const fetchMoreMovies = () => {
     const nextPage = movies.length / 20 + 1; // Obtém o número da próxima página
     fetch(
@@ -37,6 +52,11 @@ const Movies = () => {
     fetchGenres();
   }, []);
 
+  /**
+   * @brief Busca os gêneros dos filmes.
+   *
+   * Esta função busca os gêneros dos filmes da API e atualiza o estado do componente com os gêneros encontrados.
+   */
   const fetchGenres = () => {
     fetch(
       'https://api.themoviedb.org/3/genre/movie/list?api_key=d6921ce6a56573002e9180ba12b4f5a0&language=en-US'
@@ -51,6 +71,14 @@ const Movies = () => {
       });
   };
 
+  /**
+   * @brief Obtém o nome do gênero.
+   *
+   * Esta função recebe um array de IDs de gênero e retorna uma string com os nomes dos gêneros correspondentes.
+   *
+   * @param {number[]} genreIds - Array de IDs de gênero.
+   * @returns {string} - String com os nomes dos gêneros separados por vírgula.
+   */
   const getGenreName = (genreIds) => {
     if (genreIds) {
       const genreNames = genreIds.map((genreId) => genres[genreId]);
@@ -59,6 +87,15 @@ const Movies = () => {
     return "";
   };
 
+  /**
+   * @brief Filtra os filmes por gênero.
+   *
+   * Esta função recebe uma lista de filmes e um array de nomes de gênero e retorna uma nova lista de filmes que correspondem aos gêneros especificados.
+   *
+   * @param {Object[]} movies - Lista de filmes.
+   * @param {string[]} genreNames - Array de nomes de gênero.
+   * @returns {Object[]} - Nova lista de filmes filtrados.
+   */
   const filterMoviesByGenres = (movies, genreNames) => {
     return movies.filter((movie) => {
       const movieGenres = movie.genre_ids.map((genreId) => genres[genreId]);
@@ -66,7 +103,7 @@ const Movies = () => {
     });
   };
 
-
+   // Array com os gêneros selecionados pelo usuário
   const generos = [""];
   console.log(localStorage.getItem('usuario'));
   console.log(localStorage.getItem(localStorage.getItem('usuario') + 'preference' + 'action'));

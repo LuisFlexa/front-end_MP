@@ -2,6 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './estilo.css';
 
+/**
+ * @brief Componente que exibe uma lista de livros.
+ *
+ * Este componente busca dados dos livros de diferentes gêneros e exibe uma lista de livros.
+ */
 const BookList = () => {
   const [books, setBooks] = useState([]);
   const [error, setError] = useState('');
@@ -10,6 +15,12 @@ const BookList = () => {
   const [isLoading, setIsLoading] = useState(false); // Flag de carregamento
 
   useEffect(() => {
+    /**
+     * @brief Função para buscar os dados dos livros.
+     *
+     * Esta função é executada ao montar o componente e busca dados dos livros de diferentes gêneros
+     * usando a API do New York Times.
+     */
     const fetchBooks = async () => {
       setIsLoading(true);
       const apiKey = 'GVGurX2a9F3WrELlA1y42Rz1l8yyAbZI';
@@ -124,6 +135,11 @@ const BookList = () => {
     fetchBooks();
   }, []);
 
+  /**
+   * @brief Carrega mais livros para exibir.
+   *
+   * Esta função é chamada quando o usuário clica no botão "Carregar mais livros" para exibir mais livros.
+   */
   const loadMoreBooks = () => {
     setVisibleBooks(visibleBooks + 8); // Aumenta a quantidade de livros visíveis
   };

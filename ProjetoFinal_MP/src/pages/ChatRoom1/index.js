@@ -9,6 +9,11 @@ import './estilo.css';
 
 const auth = getAuth(app);
 
+/**
+ * @brief Componente principal da aplicação.
+ *
+ * Este componente renderiza o cabeçalho, o conteúdo principal (ChatRoom ou SignIn) e gerencia o estado de autenticação do usuário.
+ */
 export const App = () => {
   const [user] = useAuthState(auth);
   return (
@@ -22,6 +27,11 @@ export const App = () => {
   );
 };
 
+/**
+ * @brief Componente que exibe a sala de chat.
+ *
+ * Este componente busca mensagens da sala de chat, permite enviar mensagens e renderiza as mensagens na tela.
+ */
 export const ChatRoom = () => {
   const chatString = localStorage.getItem(localStorage.getItem('usuario'+'tipo'));
   console.log(localStorage.getItem(localStorage.getItem('usuario'+'tipo')));
@@ -32,6 +42,15 @@ export const ChatRoom = () => {
   const [messages] = useCollectionData(q, { idField: "id" });
 
   const [formValue, setFormValue] = useState("");
+
+  /**
+   * @brief Envia uma mensagem.
+   *
+   * Esta função é chamada quando o usuário envia uma mensagem no formulário. Ela adiciona a mensagem
+   * ao banco de dados e limpa o campo de entrada de mensagens.
+   *
+   * @param {Object} e - Evento do formulário.
+   */
   const sendMessage = async (e) => {
     e.preventDefault();
     const { photoURL, uid } = auth.currentUser;
@@ -65,6 +84,11 @@ export const ChatRoom = () => {
   );
 };
 
+/**
+ * @brief Componente que representa uma mensagem de chat.
+ *
+ * Este componente renderiza uma mensagem de chat com o texto e a imagem do remetente.
+ */
 export const ChatMessage = (props) => {
   const { text, uid, photoURL } = props.message;
 
@@ -77,12 +101,22 @@ export const ChatMessage = (props) => {
   );
 };
 
+/**
+ * @brief Componente de autenticação do usuário.
+ *
+ * Este componente renderiza um botão para fazer login com o Google.
+ */
 export const SignIn = () => {
   const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
 
   return <button className="btn-voltar" onClick={() => signInWithGoogle()}>logar com Google</button>;
 };
 
+/**
+ * @brief Componente de logout do usuário.
+ *
+ * Este componente renderiza um botão para fazer logout e redirecionar o usuário para a página inicial.
+ */
 export const SignOut = () => {
   return (
     <Link to="/home"><button className="btn-voltar">Sair</button></Link>

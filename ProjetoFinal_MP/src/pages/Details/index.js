@@ -2,12 +2,22 @@ import { useEffect, useState } from 'react'
 import {Link, useParams} from 'react-router-dom'
 import { Container } from './styles'
 
+/**
+ * @brief Componente de detalhes do filme.
+ *
+ * Este componente busca os detalhes de um filme com base no ID fornecido e exibe as informações do filme na tela.
+ */
 function Details(){
     const { id } = useParams()
     const [movie, setMovie] = useState([])
     const image_path = 'https://image.tmdb.org/t/p/w500'
 
     useEffect(() => {
+        /**
+         * @brief Busca os detalhes do filme.
+         *
+         * Esta função é executada ao montar o componente e busca os detalhes do filme com base no ID fornecido.
+         */
         fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=d6921ce6a56573002e9180ba12b4f5a0&language=pt-BR`)
             .then(response => response.json())
             .then(data => {
