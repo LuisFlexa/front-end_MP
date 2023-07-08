@@ -23,7 +23,7 @@ A aplicação consiste em um site de preferência de livros, onde os dados de pr
 ![Modelo Conceitual](https://github.com/acenelio/assets/raw/main/sds1/modelo-conceitual.png)
 
 ## Diagrama de fluxo do Banco de dados
-![Modelo Conceitual](https://github.com/acenelio/assets/raw/main/sds1/modelo-conceitual.png)
+![Modelo Conceitual](https://prnt.sc/vNfFhlNjSzs7)
 
 ## Diagrama de 
 ![Modelo Conceitual](https://github.com/acenelio/assets/raw/main/sds1/modelo-conceitual.png)
