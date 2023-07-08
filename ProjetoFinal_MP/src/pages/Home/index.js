@@ -3,20 +3,19 @@ import './estilo.css';
 import Livros from "../../components/imgs/livros.png";
 
 /**
- * @brief Componente que representa a página inicial do menu.
+ * Componente que representa a página inicial do menu.
  * @returns {JSX.Element} Componente da página inicial do menu.
  */
 const MenuHome = () => {
 
     /**
-     * @const usuario
-     * @brief Variável que armazena o nome do usuário.
+     * Variável que armazena o nome do usuário.
      * @type {string}
      */
     const usuario = localStorage.getItem(localStorage.getItem('usuario') + 'preference' + 'action');
     
     /**
-     * @brief Verifica se o usuário está autenticado e redireciona para a página de preferências, se necessário.
+     * Verifica se o usuário está autenticado e redireciona para a página de preferências, se necessário.
      * @returns {JSX.Element} Componente Navigate do React Router para redirecionamento.
      */
     if (!usuario) {

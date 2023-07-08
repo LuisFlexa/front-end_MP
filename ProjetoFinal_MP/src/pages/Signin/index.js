@@ -5,9 +5,11 @@ import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 
 /**
- * @brief Componente de login.
- *
+ * Componente de login.
+ * 
  * Este componente exibe um formulário de login e gerencia o estado do login do usuário.
+ * 
+ * @returns {JSX.Element} O elemento JSX contendo o formulário de login.
  */
 const Signin = () => {
   const { signin } = useAuth();
@@ -18,7 +20,7 @@ const Signin = () => {
   const [error, setError] = useState("");
 
   /**
-   * @brief Manipula o login do usuário.
+   * Manipula o login do usuário.
    *
    * Esta função é chamada quando o usuário clica no botão de login. Ela valida os campos de entrada,
    * realiza o login do usuário e navega para a página principal.

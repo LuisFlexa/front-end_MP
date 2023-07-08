@@ -3,9 +3,11 @@ import { Link } from 'react-router-dom';
 import './estilo.css';
 
 /**
- * @brief Componente que exibe uma lista de livros.
+ * Componente que exibe uma lista de livros.
  *
  * Este componente busca dados dos livros de diferentes gêneros e exibe uma lista de livros.
+ *
+ * @returns {JSX.Element} O elemento JSX contendo a lista de livros.
  */
 const BookList = () => {
   const [books, setBooks] = useState([]);
@@ -16,7 +18,7 @@ const BookList = () => {
 
   useEffect(() => {
     /**
-     * @brief Função para buscar os dados dos livros.
+     * Função para buscar os dados dos livros.
      *
      * Esta função é executada ao montar o componente e busca dados dos livros de diferentes gêneros
      * usando a API do New York Times.
@@ -136,7 +138,7 @@ const BookList = () => {
   }, []);
 
   /**
-   * @brief Carrega mais livros para exibir.
+   * Carrega mais livros para exibir.
    *
    * Esta função é chamada quando o usuário clica no botão "Carregar mais livros" para exibir mais livros.
    */

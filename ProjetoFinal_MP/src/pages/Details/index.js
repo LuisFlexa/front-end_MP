@@ -3,9 +3,11 @@ import {Link, useParams} from 'react-router-dom'
 import { Container } from './styles'
 
 /**
- * @brief Componente de detalhes do filme.
+ * Componente de detalhes do filme.
  *
  * Este componente busca os detalhes de um filme com base no ID fornecido e exibe as informações do filme na tela.
+ *
+ * @returns {JSX.Element} O elemento JSX contendo as informações detalhadas do filme.
  */
 function Details(){
     const { id } = useParams()
@@ -14,7 +16,7 @@ function Details(){
 
     useEffect(() => {
         /**
-         * @brief Busca os detalhes do filme.
+         * Busca os detalhes do filme.
          *
          * Esta função é executada ao montar o componente e busca os detalhes do filme com base no ID fornecido.
          */

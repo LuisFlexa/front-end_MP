@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import './style.css';
 
 /**
- * @brief Componente que representa o formulário de preferências.
+ * Componente que representa o formulário de preferências.
  * @returns {JSX.Element} Componente do formulário de preferências.
  */
 function FormularioPreferencias() {
@@ -28,7 +28,7 @@ function FormularioPreferencias() {
   });
 
   /**
-   * @brief Manipula a alteração de um campo de preferência.
+   * Manipula a alteração de um campo de preferência.
    * @param {Object} event - O evento de alteração.
    */
   const handleChange = (event) => {
@@ -40,7 +40,7 @@ function FormularioPreferencias() {
   };
 
   /**
-   * @brief Manipula o envio do formulário de preferências.
+   * Manipula o envio do formulário de preferências.
    * @param {Object} event - O evento de envio do formulário.
    */
   const handleSubmit = (event) => {

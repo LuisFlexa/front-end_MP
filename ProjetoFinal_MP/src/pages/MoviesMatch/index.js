@@ -5,7 +5,7 @@ import * as C from "./styles";
 import './estilo.css';
 
 /**
- * @brief Componente de filmes.
+ * Componente de filmes.
  *
  * Este componente exibe uma lista de filmes populares e permite filtrá-los por gênero.
  * @returns {JSX.Element} Componente de filmes.
@@ -23,7 +23,7 @@ const Movies = () => {
   }, []);
 
   /**
-   * @brief Busca os filmes populares.
+   * Busca os filmes populares.
    *
    * Esta função busca os filmes populares da API e atualiza o estado do componente com os filmes encontrados.
    */
@@ -36,7 +36,7 @@ const Movies = () => {
   };
 
   /**
-   * @brief Busca mais filmes.
+   * Busca mais filmes.
    *
    * Esta função busca a próxima página de filmes populares da API e adiciona os filmes encontrados ao estado do componente.
    */
@@ -54,7 +54,7 @@ const Movies = () => {
   }, []);
 
   /**
-   * @brief Busca os gêneros dos filmes.
+   * Busca os gêneros dos filmes.
    *
    * Esta função busca os gêneros dos filmes da API e atualiza o estado do componente com os gêneros encontrados.
    */
@@ -73,7 +73,7 @@ const Movies = () => {
   };
 
   /**
-   * @brief Obtém o nome do gênero.
+   * Obtém o nome do gênero.
    *
    * Esta função recebe um array de IDs de gênero e retorna uma string com os nomes dos gêneros correspondentes.
    *
@@ -89,7 +89,7 @@ const Movies = () => {
   };
 
   /**
-   * @brief Filtra os filmes por gênero.
+   * Filtra os filmes por gênero.
    *
    * Esta função recebe uma lista de filmes e um array de nomes de gênero e retorna uma nova lista de filmes que correspondem aos gêneros especificados.
    *

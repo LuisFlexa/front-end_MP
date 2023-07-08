@@ -10,9 +10,11 @@ import './estilo.css';
 const auth = getAuth(app);
 
 /**
- * @brief Componente principal da aplicação.
+ * Componente principal da aplicação.
  *
  * Este componente renderiza o cabeçalho, o conteúdo principal (ChatRoom ou SignIn) e gerencia o estado de autenticação do usuário.
+ *
+ * @returns {JSX.Element} O elemento JSX contendo o componente principal da aplicação.
  */
 export const App = () => {
   const [user] = useAuthState(auth);
@@ -28,9 +30,11 @@ export const App = () => {
 };
 
 /**
- * @brief Componente que exibe a sala de chat.
+ * Componente que exibe a sala de chat.
  *
  * Este componente busca mensagens da sala de chat, permite enviar mensagens e renderiza as mensagens na tela.
+ *
+ * @returns {JSX.Element} O elemento JSX contendo a sala de chat.
  */
 export const ChatRoom = () => {
   const chatString = localStorage.getItem(localStorage.getItem('usuario'+'tipo'));
@@ -44,7 +48,7 @@ export const ChatRoom = () => {
   const [formValue, setFormValue] = useState("");
 
   /**
-   * @brief Envia uma mensagem.
+   * Envia uma mensagem.
    *
    * Esta função é chamada quando o usuário envia uma mensagem no formulário. Ela adiciona a mensagem
    * ao banco de dados e limpa o campo de entrada de mensagens.
@@ -85,9 +89,15 @@ export const ChatRoom = () => {
 };
 
 /**
- * @brief Componente que representa uma mensagem de chat.
+ * Componente que representa uma mensagem de chat.
  *
  * Este componente renderiza uma mensagem de chat com o texto e a imagem do remetente.
+ *
+ * @param {Object} props - Propriedades do componente.
+ * @param {string} props.text - O texto da mensagem.
+ * @param {string} props.uid - O ID do remetente da mensagem.
+ * @param {string} props.photoURL - A URL da foto do remetente.
+ * @returns {JSX.Element} O elemento JSX contendo a mensagem de chat.
  */
 export const ChatMessage = (props) => {
   const { text, uid, photoURL } = props.message;
@@ -102,9 +112,11 @@ export const ChatMessage = (props) => {
 };
 
 /**
- * @brief Componente de autenticação do usuário.
+ * Componente de autenticação do usuário.
  *
  * Este componente renderiza um botão para fazer login com o Google.
+ *
+ * @returns {JSX.Element} O elemento JSX contendo o componente de autenticação do usuário.
  */
 export const SignIn = () => {
   const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
@@ -113,9 +125,11 @@ export const SignIn = () => {
 };
 
 /**
- * @brief Componente de logout do usuário.
+ * Componente de logout do usuário.
  *
  * Este componente renderiza um botão para fazer logout e redirecionar o usuário para a página inicial.
+ *
+ * @returns {JSX.Element} O elemento JSX contendo o componente de logout do usuário.
  */
 export const SignOut = () => {
   return (

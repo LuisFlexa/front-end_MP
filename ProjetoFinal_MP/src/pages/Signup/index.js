@@ -5,9 +5,11 @@ import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 
 /**
- * @brief Componente de cadastro.
- *
- * Este componente exibe um formulário de cadastro e gerencia o estado do cadastro do usuário.
+ * Componente de cadastro.
+ * 
+ * Exibe um formulário de cadastro e gerencia o estado do cadastro do usuário.
+ * 
+ * @returns {JSX.Element} O elemento JSX contendo o formulário de cadastro.
  */
 const Signup = () => {
   const [email, setEmail] = useState("");
@@ -19,10 +21,10 @@ const Signup = () => {
   const { signup } = useAuth();
 
   /**
-   * @brief Manipula o cadastro do usuário.
-   *
-   * Esta função é chamada quando o usuário clica no botão de cadastro. Ela valida os campos de entrada,
-   * realiza o cadastro do usuário e navega para a página de sucesso de cadastro.
+   * Manipula o cadastro do usuário.
+   * 
+   * É chamada quando o usuário clica no botão de cadastro. 
+   * Valida os campos de entrada, realiza o cadastro do usuário e navega para a página de sucesso de cadastro.
    */
   const handleSignup = () => {
     if (!email | !senhaConf | !senha) {

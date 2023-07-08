@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: BooksMatchV2/index.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: BooksMatchV2/index.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import './estilo.css';
+
+/**
+ * @brief Componente que exibe uma lista de livros.
+ *
+ * Este componente busca dados dos livros de diferentes gêneros e exibe uma lista de livros.
+ */
+const BookList = () => {
+  const [books, setBooks] = useState([]);
+  const [error, setError] = useState('');
+  const [visibleBooks, setVisibleBooks] = useState(8); // Quantidade inicial de livros visíveis
+  const [totalBooks, setTotalBooks] = useState(0); // Total de livros disponíveis
+  const [isLoading, setIsLoading] = useState(false); // Flag de carregamento
+
+  useEffect(() => {
+    /**
+     * @brief Função para buscar os dados dos livros.
+     *
+     * Esta função é executada ao montar o componente e busca dados dos livros de diferentes gêneros
+     * usando a API do New York Times.
+     */
+    const fetchBooks = async () => {
+      setIsLoading(true);
+      const apiKey = 'GVGurX2a9F3WrELlA1y42Rz1l8yyAbZI';
+      const genre1 = 'hardcover-fiction';
+      const genre2 = 'hardcover-nonfiction';
+      const genre3 = 'advice-how-to-and-miscellaneous';
+      const genre4 = 'young-adult';
+
+      const response1 = await fetch(
+        `https://api.nytimes.com/svc/books/v3/lists/current/${genre1}.json?api-key=${apiKey}`
+      );
+      const data1 = await response1.json();
+
+      const response2 = await fetch(
+        `https://api.nytimes.com/svc/books/v3/lists/current/${genre2}.json?api-key=${apiKey}`
+      );
+      const data2 = await response2.json();
+
+      const response3 = await fetch(
+        `https://api.nytimes.com/svc/books/v3/lists/current/${genre3}.json?api-key=${apiKey}`
+      );
+      const data3 = await response3.json();
+
+      const response4 = await fetch(
+        `https://api.nytimes.com/svc/books/v3/lists/current/${genre4}.json?api-key=${apiKey}`
+      );
+      const data4 = await response4.json();
+
+      if (response1.ok &amp;&amp; response2.ok &amp;&amp; response3.ok &amp;&amp; response4.ok) {
+        const bookList1 = data1.results.books.map((book) => ({
+          title: book.title,
+          author: book.author,
+          image: book.book_image,
+          genre: genre1,
+          link: book.amazon_product_url,
+        }));
+
+        const bookList2 = data2.results.books.map((book) => ({
+          title: book.title,
+          author: book.author,
+          image: book.book_image,
+          genre: genre2,
+          link: book.amazon_product_url,
+        }));
+
+        const bookList3 = data3.results.books.map((book) => ({
+          title: book.title,
+          author: book.author,
+          image: book.book_image,
+          genre: genre3,
+          link: book.amazon_product_url,
+        }));
+
+        const bookList4 = data4.results.books.map((book) => ({
+          title: book.title,
+          author: book.author,
+          image: book.book_image,
+          genre: genre4,
+          link: book.amazon_product_url,
+        }));
+
+        const combinedBookList = [];
+
+        if (
+          localStorage.getItem(localStorage.getItem('usuario') + 'preference' + 'romance') === 'yes' ||
+          localStorage.getItem(localStorage.getItem('usuario') + 'preference' + 'drama') === 'yes' ||
+          localStorage.getItem(localStorage.getItem('usuario') + 'preference' + 'comedy') === 'yes'
+        ) {
+          console.log('entra romance');
+          combinedBookList.push(...bookList4);
+        }
+
+        if (
+          localStorage.getItem(localStorage.getItem('usuario') + 'preference' + 'musical') === 'yes' ||
+          localStorage.getItem(localStorage.getItem('usuario') + 'preference' + 'documentary') === 'yes'
+        ) {
+          console.log('entra motivacional');
+          combinedBookList.push(...bookList3);
+        }
+
+        if (
+          localStorage.getItem(localStorage.getItem('usuario') + 'preference' + 'animation') === 'yes' ||
+          localStorage.getItem(localStorage.getItem('usuario') + 'preference' + 'fantasy') === 'yes' ||
+          localStorage.getItem(localStorage.getItem('usuario') + 'preference' + 'comedy') === 'yes' ||
+          localStorage.getItem(localStorage.getItem('usuario') + 'preference' + 'family') === 'yes'
+        ) {
+          console.log('entra nonfic');
+          combinedBookList.push(...bookList2);
+        }
+
+        if (
+          localStorage.getItem(localStorage.getItem('usuario') + 'preference' + 'thriller') === 'yes' ||
+          localStorage.getItem(localStorage.getItem('usuario') + 'preference' + 'adventure') === 'yes' ||
+          localStorage.getItem(localStorage.getItem('usuario') + 'preference' + 'sciencieFiction') === 'yes' ||
+          localStorage.getItem(localStorage.getItem('usuario') + 'preference' + 'family') === 'yes' ||
+          localStorage.getItem(localStorage.getItem('usuario') + 'preference' + 'horror') === 'yes' ||
+          localStorage.getItem(localStorage.getItem('usuario') + 'preference' + 'crime') === 'yes'
+        ) {
+          console.log('entra ficc');
+          combinedBookList.push(...bookList1);
+        }
+
+        setBooks(combinedBookList);
+        setTotalBooks(combinedBookList.length);
+        setIsLoading(false);
+      } else {
+        setError('Erro ao buscar os dados dos livros.');
+        setIsLoading(false);
+      }
+    };
+
+    fetchBooks();
+  }, []);
+
+  /**
+   * @brief Carrega mais livros para exibir.
+   *
+   * Esta função é chamada quando o usuário clica no botão "Carregar mais livros" para exibir mais livros.
+   */
+  const loadMoreBooks = () => {
+    setVisibleBooks(visibleBooks + 8); // Aumenta a quantidade de livros visíveis
+  };
+
+  return (
+    &lt;div className="Container">
+      &lt;Link to="/Recomendações">
+        &lt;button className="btn-voltar">Voltar&lt;/button>
+      &lt;/Link>
+      &lt;h1>BooksMatch&lt;/h1>
+      &lt;br>&lt;/br>
+      &lt;ul className="BookList">
+        {books.slice(0, visibleBooks).map((book, index) => (
+          &lt;li className="Book" key={index}>
+            &lt;a href={book.link} target="_blank" rel="noopener noreferrer"> {/* Utiliza a propriedade href para definir o link */}
+              &lt;img src={book.image} alt={book.title} />
+              &lt;br>&lt;/br>
+              &lt;div>
+                &lt;span>{book.title}&lt;/span>
+              &lt;/div>
+              &lt;p className="paragr">by {book.author}&lt;/p>
+            &lt;/a>
+          &lt;/li>
+        ))}
+      &lt;/ul>
+      {visibleBooks &lt; totalBooks &amp;&amp; (
+        &lt;div className='botaoDiv'>
+        &lt;button className="btn-loadMore" onClick={loadMoreBooks} disabled={isLoading}>
+          {isLoading ? 'Carregando...' : 'Carregar mais livros'}
+        &lt;/button>
+        &lt;/div>
+      )}
+    &lt;/div>
+  );
+};
+
+export default BookList;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#App">App</a></li><li><a href="global.html#BookList">BookList</a></li><li><a href="global.html#ChatMessage">ChatMessage</a></li><li><a href="global.html#ChatRoom">ChatRoom</a></li><li><a href="global.html#Details">Details</a></li><li><a href="global.html#FormularioPreferencias">FormularioPreferencias</a></li><li><a href="global.html#MenuHome">MenuHome</a></li><li><a href="global.html#Movies">Movies</a></li><li><a href="global.html#SignIn">SignIn</a></li><li><a href="global.html#SignOut">SignOut</a></li><li><a href="global.html#Signin">Signin</a></li><li><a href="global.html#Signup">Signup</a></li><li><a href="global.html#sucessoCad">sucessoCad</a></li><li><a href="global.html#usuario">usuario</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Fri Jul 07 2023 01:26:18 GMT-0300 (Brasilia Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: Prefere/index.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: Prefere/index.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React, { useState } from 'react';
+import { useNavigate } from "react-router-dom";
+import './style.css';
+
+/**
+ * @brief Componente que representa o formulário de preferências.
+ * @returns {JSX.Element} Componente do formulário de preferências.
+ */
+function FormularioPreferencias() {
+
+  const navigate = useNavigate();
+
+  const [preferencias, setPreferencias] = useState({
+    romance: false,
+    drama: false,
+    action: false,
+    crime: false,
+    adventure: false,
+    family: false,
+    horror: false,
+    scienceFiction: false,
+    comedy: false,
+    animation: false,
+    fantasy: false,
+    thriller: false,
+    documentary: false,
+    musical: false
+  });
+
+  /**
+   * @brief Manipula a alteração de um campo de preferência.
+   * @param {Object} event - O evento de alteração.
+   */
+  const handleChange = (event) => {
+    const { name, checked } = event.target;
+    setPreferencias((prevPreferencias) => ({
+      ...prevPreferencias,
+      [name]: checked
+    }));
+  };
+
+  /**
+   * @brief Manipula o envio do formulário de preferências.
+   * @param {Object} event - O evento de envio do formulário.
+   */
+  const handleSubmit = (event) => {
+    event.preventDefault();
+  const selectedCount = Object.values(preferencias).filter(Boolean).length;
+  if (selectedCount >= 3) {
+    const usuario = {
+      preference: preferencias
+    };
+    /*localStorage.setItem('usuario', JSON.stringify(usuario));
+    console.log(preferencias);
+    console.log(JSON.parse(localStorage.getItem('usuario')).preference);*/
+
+    if (preferencias.romance == true) {localStorage.setItem(localStorage.getItem('usuario') + 'preference' + 'romance', "yes"); }
+    else { localStorage.setItem(localStorage.getItem('usuario') + 'preference' + 'romance', "no");}
+
+    if (preferencias.drama == true) {localStorage.setItem(localStorage.getItem('usuario') + 'preference' + 'drama', "yes"); }
+    else { localStorage.setItem(localStorage.getItem('usuario') + 'preference' + 'drama', "no");}
+
+    if (preferencias.action == true) {localStorage.setItem(localStorage.getItem('usuario') + 'preference' + 'action', "yes"); }
+    else { localStorage.setItem(localStorage.getItem('usuario') + 'preference' + 'action', "no");}
+
+    if (preferencias.crime == true) {localStorage.setItem(localStorage.getItem('usuario') + 'preference' + 'crime', "yes"); }
+    else { localStorage.setItem(localStorage.getItem('usuario') + 'preference' + 'crime', "no");}
+
+    if (preferencias.adventure == true) {localStorage.setItem(localStorage.getItem('usuario') + 'preference' + 'adventure', "yes"); }
+    else { localStorage.setItem(localStorage.getItem('usuario') + 'preference' + 'adventure', "no");}
+
+    if (preferencias.family) { localStorage.setItem(localStorage.getItem('usuario') + 'preference' + 'family', "yes"); } 
+    else { localStorage.setItem(localStorage.getItem('usuario') + 'preference' + 'family', "no"); }
+
+    if (preferencias.horror) { localStorage.setItem(localStorage.getItem('usuario') + 'preference' + 'horror', "yes"); } 
+    else { localStorage.setItem(localStorage.getItem('usuario') + 'preference' + 'horror', "no"); }
+
+    if (preferencias.scienceFiction) { localStorage.setItem(localStorage.getItem('usuario') + 'preference' + 'scienceFiction', "yes"); } 
+    else { localStorage.setItem(localStorage.getItem('usuario') + 'preference' + 'scienceFiction', "no"); }
+    
+    if (preferencias.comedy) { localStorage.setItem(localStorage.getItem('usuario') + 'preference' + 'comedy', "yes"); } 
+    else { localStorage.setItem(localStorage.getItem('usuario') + 'preference' + 'comedy', "no"); }
+    
+    if (preferencias.animation) { localStorage.setItem(localStorage.getItem('usuario') + 'preference' + 'animation', "yes"); } 
+    else { localStorage.setItem(localStorage.getItem('usuario') + 'preference' + 'animation', "no"); }
+    
+    if (preferencias.fantasy) { localStorage.setItem(localStorage.getItem('usuario') + 'preference' + 'fantasy', "yes"); } 
+    else { localStorage.setItem(localStorage.getItem('usuario') + 'preference' + 'fantasy', "no"); }
+    
+    if (preferencias.thriller) { localStorage.setItem(localStorage.getItem('usuario') + 'preference' + 'thriller', "yes"); } 
+    else { localStorage.setItem(localStorage.getItem('usuario') + 'preference' + 'thriller', "no"); }
+    
+    if (preferencias.documentary) { localStorage.setItem(localStorage.getItem('usuario') + 'preference' + 'documentary', "yes"); } 
+    else { localStorage.setItem(localStorage.getItem('usuario') + 'preference' + 'documentary', "no"); }
+    
+    if (preferencias.musical) { localStorage.setItem(localStorage.getItem('usuario') + 'preference' + 'musical', "yes"); } 
+    else { localStorage.setItem(localStorage.getItem('usuario') + 'preference' + 'musical', "no"); }
+      
+    navigate("/Home");
+
+  } else {
+    console.log('Selecione pelo menos 3 itens');
+    localStorage.setItem('test', '3');
+    //localStorage.setItem(localStorage.getItem('usuario') + 'preference', "yes");
+
+    //localStorage.setItem(localStorage.getItem('usuario'), "NNOCAP");
+
+    //00000000000000000000000000
+    const userToken = localStorage.getItem("user_token");
+    console.log(localStorage.getItem(JSON.parse(userToken).email));
+    console.log(localStorage.getItem('usuario'.teste));
+  }
+  };
+
+  return (
+    &lt;div class="box">
+    &lt;form className="preferences-form" onSubmit={handleSubmit}>
+    &lt;fieldset>
+    &lt;legend>&lt;b>Preferências&lt;/b>&lt;/legend>
+    &lt;div className="checkbox-group">
+      &lt;div>
+        &lt;label>
+          &lt;input
+            type="checkbox"
+            name="romance"
+            checked={preferencias.romance}
+            onChange={handleChange}
+          />
+          Romance
+        &lt;/label>
+      &lt;/div>
+      &lt;div>
+        &lt;label>
+          &lt;input
+            type="checkbox"
+            name="drama"
+            checked={preferencias.drama}
+            onChange={handleChange}
+          />
+          Drama
+        &lt;/label>
+      &lt;/div>
+      &lt;div>
+        &lt;label>
+          &lt;input
+            type="checkbox"
+            name="action"
+            checked={preferencias.action}
+            onChange={handleChange}
+          />
+          Action
+        &lt;/label>
+      &lt;/div>
+      &lt;div>
+        &lt;label>
+          &lt;input
+            type="checkbox"
+            name="crime"
+            checked={preferencias.crime}
+            onChange={handleChange}
+          />
+          Crime
+        &lt;/label>
+      &lt;/div>
+      &lt;div>
+        &lt;label>
+          &lt;input
+            type="checkbox"
+            name="adventure"
+            checked={preferencias.adventure}
+            onChange={handleChange}
+          />
+          Adventure
+        &lt;/label>
+      &lt;/div>
+      &lt;div>
+        &lt;label>
+          &lt;input
+            type="checkbox"
+            name="family"
+            checked={preferencias.family}
+            onChange={handleChange}
+          />
+          Family
+        &lt;/label>
+      &lt;/div>
+      &lt;div>
+        &lt;label>
+          &lt;input
+            type="checkbox"
+            name="horror"
+            checked={preferencias.horror}
+            onChange={handleChange}
+          />
+          Horror
+        &lt;/label>
+      &lt;/div>
+      &lt;div>
+        &lt;label>
+          &lt;input
+            type="checkbox"
+            name="scienceFiction"
+            checked={preferencias.scienceFiction}
+            onChange={handleChange}
+          />
+          Science Fiction
+        &lt;/label>
+      &lt;/div>
+      &lt;div>
+        &lt;label>
+          &lt;input
+            type="checkbox"
+            name="comedy"
+            checked={preferencias.comedy}
+            onChange={handleChange}
+          />
+          Comedy
+        &lt;/label>
+      &lt;/div>
+      &lt;div>
+        &lt;label>
+          &lt;input
+            type="checkbox"
+            name="animation"
+            checked={preferencias.animation}
+            onChange={handleChange}
+          />
+          Animation
+        &lt;/label>
+      &lt;/div>
+      &lt;div>
+        &lt;label>
+          &lt;input
+            type="checkbox"
+            name="fantasy"
+            checked={preferencias.fantasy}
+            onChange={handleChange}
+          />
+          Fantasy
+        &lt;/label>
+      &lt;/div>
+      &lt;div>
+        &lt;label>
+          &lt;input
+            type="checkbox"
+            name="thriller"
+            checked={preferencias.thriller}
+            onChange={handleChange}
+          />
+          Thriller
+        &lt;/label>
+      &lt;/div>
+      &lt;div>
+        &lt;label>
+          &lt;input
+            type="checkbox"
+            name="documentary"
+            checked={preferencias.documentary}
+            onChange={handleChange}
+          />
+          Documentary
+        &lt;/label>
+      &lt;/div>
+      &lt;div>
+        &lt;label>
+          &lt;input
+            type="checkbox"
+            name="musical"
+            checked={preferencias.musical}
+            onChange={handleChange}
+          />
+          Musical
+        &lt;/label>
+      &lt;/div>
+      &lt;/div>
+      &lt;br>&lt;/br>
+      &lt;button className="btnS" type="submit">Salvar Preferências (3 no mínimo)&lt;/button>
+      &lt;/fieldset>
+    &lt;/form>
+    &lt;/div>
+  );
+}
+
+export default FormularioPreferencias;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#App">App</a></li><li><a href="global.html#BookList">BookList</a></li><li><a href="global.html#ChatMessage">ChatMessage</a></li><li><a href="global.html#ChatRoom">ChatRoom</a></li><li><a href="global.html#Details">Details</a></li><li><a href="global.html#FormularioPreferencias">FormularioPreferencias</a></li><li><a href="global.html#MenuHome">MenuHome</a></li><li><a href="global.html#Movies">Movies</a></li><li><a href="global.html#SignIn">SignIn</a></li><li><a href="global.html#SignOut">SignOut</a></li><li><a href="global.html#Signin">Signin</a></li><li><a href="global.html#Signup">Signup</a></li><li><a href="global.html#sucessoCad">sucessoCad</a></li><li><a href="global.html#usuario">usuario</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Fri Jul 07 2023 01:26:18 GMT-0300 (Brasilia Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

@@ -2,9 +2,11 @@ import {Link} from 'react-router-dom';
 import './estilo.css';
 
 /**
- * @brief Componente de sucesso de cadastro.
+ * Componente de sucesso de cadastro.
  *
  * Este componente exibe uma mensagem de sucesso após o cadastro do usuário.
+ *
+ * @returns {JSX.Element} O elemento JSX contendo a mensagem de sucesso e o botão de retorno ao login.
  */
 function sucessoCad() {
     return (
