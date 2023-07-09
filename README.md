@@ -35,7 +35,7 @@ A aplicação consiste em um site de preferência de livros e filmes, onde o usu
 ## Front end
 - HTML / CSS / JS 
 - ReactJS
-- React Native
+- NodeJS 
 
 ## Implantação em produção
 - Front end web: ReactJS 
