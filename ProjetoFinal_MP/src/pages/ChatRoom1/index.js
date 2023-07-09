@@ -16,6 +16,7 @@ const auth = getAuth(app);
  *
  * @returns {JSX.Element} O elemento JSX contendo o componente principal da aplicação.
  */
+// U04
 export const App = () => {
   const [user] = useAuthState(auth);
   return (

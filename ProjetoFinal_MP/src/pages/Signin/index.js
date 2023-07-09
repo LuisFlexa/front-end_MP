@@ -14,6 +14,7 @@ import useAuth from "../../hooks/useAuth";
  * 
  * @returns {JSX.Element} O elemento JSX contendo o formulário de login.
  */
+// U00 e U01
 const Signin = () => {
   const { signin } = useAuth();
   const navigate = useNavigate();

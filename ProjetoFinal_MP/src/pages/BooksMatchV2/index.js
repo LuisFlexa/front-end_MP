@@ -12,6 +12,7 @@ import './estilo.css';
  *
  * @returns {JSX.Element} O elemento JSX contendo a lista de livros.
  */
+// U02 e U06
 const BookList = () => {
   const [books, setBooks] = useState([]);
   const [error, setError] = useState('');

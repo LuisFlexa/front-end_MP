@@ -14,6 +14,7 @@ import useAuth from "../../hooks/useAuth";
  * 
  * @returns {JSX.Element} O elemento JSX contendo o formulário de cadastro.
  */
+// U00
 const Signup = () => {
   const [email, setEmail] = useState("");
   const [senhaConf, setEmailConf] = useState("");

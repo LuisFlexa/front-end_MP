@@ -13,6 +13,7 @@ import './estilo.css';
  * Este componente exibe uma lista de filmes populares e permite filtrá-los por gênero.
  * @returns {JSX.Element} Componente de filmes.
  */
+// U03 e U05
 const Movies = () => {
   const { signout } = useAuth();
   const navigate = useNavigate();

@@ -10,6 +10,7 @@ import './style.css';
  * 
  * @returns {JSX.Element} Componente do formulário de preferências.
  */
+// U01
 function FormularioPreferencias() {
 
   const navigate = useNavigate();
