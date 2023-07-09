@@ -5,6 +5,9 @@ import { Container } from './styles'
 /**
  * Componente de detalhes do filme.
  *
+ * Assertiva de entrada: Filme selecionado pelo usuário.
+ * Assertiva de saída: Uma sinopse do filme.
+ * 
  * Este componente busca os detalhes de um filme com base no ID fornecido e exibe as informações do filme na tela.
  *
  * @returns {JSX.Element} O elemento JSX contendo as informações detalhadas do filme.

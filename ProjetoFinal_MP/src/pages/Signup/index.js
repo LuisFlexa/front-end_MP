@@ -9,6 +9,9 @@ import useAuth from "../../hooks/useAuth";
  * 
  * Exibe um formulário de cadastro e gerencia o estado do cadastro do usuário.
  * 
+ * Assertiva de entrada: Email, senha e confirmação de senha válidos.
+ * Assertiva de saída: O usuário é cadastrado com sucesso.
+ * 
  * @returns {JSX.Element} O elemento JSX contendo o formulário de cadastro.
  */
 const Signup = () => {

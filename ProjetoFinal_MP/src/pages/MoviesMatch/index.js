@@ -7,6 +7,9 @@ import './estilo.css';
 /**
  * Componente de filmes.
  *
+ * Assertiva de entrada: Preferências do usuário.
+ * Assertiva de saída: Uma lista de recomendações de acordo com suas preferências.
+ * 
  * Este componente exibe uma lista de filmes populares e permite filtrá-los por gênero.
  * @returns {JSX.Element} Componente de filmes.
  */

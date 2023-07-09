@@ -9,6 +9,9 @@ import useAuth from "../../hooks/useAuth";
  * 
  * Este componente exibe um formulário de login e gerencia o estado do login do usuário.
  * 
+ * Assertiva de entrada: Email e senha válidos já cadastrados.
+ * Assertiva de saida: O usuário é logado com sucesso.
+ * 
  * @returns {JSX.Element} O elemento JSX contendo o formulário de login.
  */
 const Signin = () => {

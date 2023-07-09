@@ -4,6 +4,10 @@ import './style.css';
 
 /**
  * Componente que representa o formulário de preferências.
+ * 
+ * Assertiva de entrada: O usuário põe suas preferências.
+ * Assertiva de saída: O usuário é direcionado para as areas de chat e match.
+ * 
  * @returns {JSX.Element} Componente do formulário de preferências.
  */
 function FormularioPreferencias() {

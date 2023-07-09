@@ -5,6 +5,9 @@ import './estilo.css';
 /**
  * Componente que exibe uma lista de livros.
  *
+ * Assertiva de entrada: Preferências do usuário.
+ * Assertiva de saída: Uma lista de recomendações de livros de acordo com suas preferências.
+ * 
  * Este componente busca dados dos livros de diferentes gêneros e exibe uma lista de livros.
  *
  * @returns {JSX.Element} O elemento JSX contendo a lista de livros.
