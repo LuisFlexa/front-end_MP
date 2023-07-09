@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # projeto_MP
 
 repositório remoto do projeto de MP
@@ -10,9 +9,9 @@ repositório remoto do projeto de MP
 
 URL DO SITE FINAL
 
-BookWise é uma aplicação full stack web construída para o Projeto final da matéria Métodos de Programação da Universidade de Brasília-UnB. 
+BookWise é uma aplicação web construída através da utilização de local storage e necessita apenas de um servidor local. Foi elaborada para o Projeto final da matéria Métodos de Programação da Universidade de Brasília - UnB. 
 
-A aplicação consiste em um site de preferência de livros, onde os dados de preferêencia são coletados, e depois sãoaplicados em um algoritmo de match para unir usuários com gostos parecidos e que possam recomensá-los livros novos com base em suas preferências.
+A aplicação consiste em um site de preferência de livros e filmes, onde o usuário irá escolher suas preferências e com base nelas será aplicado um algoritmo de match para recomendar os filmes ou livros que possam satisfazer o gosto do usuário, além de um chat que funciona para usuários com gostos semelhantes, fazendo com que as pessoas conheçam outras com gostos parecidos.
 
 ## Layout web
 ![Web 1](https://github.com/acenelio/assets/raw/main/sds1/web1.png)
@@ -20,13 +19,16 @@ A aplicação consiste em um site de preferência de livros, onde os dados de pr
 ![Web 2](https://github.com/acenelio/assets/raw/main/sds1/web2.png)
 
 ## Diagrama de Models
-![Modelo Conceitual](https://github.com/acenelio/assets/raw/main/sds1/modelo-conceitual.png)
+![Modelo Conceitual](DiagramaDasModels.png)
 
-## Diagrama de fluxo do Banco de dados
-![Modelo Conceitual](https://prnt.sc/vNfFhlNjSzs7)
+## Diagrama das Atividades Match
+![Modelo Conceitual](DiagramaAtividadesMatch.drawio.png)
 
-## Diagrama de 
-![Modelo Conceitual](https://github.com/acenelio/assets/raw/main/sds1/modelo-conceitual.png)
+## Diagrama do Fluxo de Dados
+![Modelo Conceitual](DiagramaFluxoDeDados.drawio.png)
+
+## Diagrama dos Casos de Uso
+![Modelo Conceitual](DiagramaCasoDeUso.drawio.png)
 
 # Tecnologias utilizadas
 
@@ -34,18 +36,16 @@ A aplicação consiste em um site de preferência de livros, onde os dados de pr
 - HTML / CSS / JS 
 - ReactJS
 - React Native
-- Yarn
-- Eslint
-  
+- 
 ## Implantação em produção
-- Back end: Heroku
-- Front end web: Netlify
-- Banco de dados: Postgresql
+- Front end web: ReactJS 
+- API de livros: The New York Times e GoogleBooks
+- API de filmes: Imdb
 
 # Como executar o projeto
 
 ## Front end
-Pré-requisitos: npm 9.5.1, node 18.16.0, pnpm 8.6.5
+Pré-requisitos: npm 9.5.1, node 18.16.0, pnpm 8.6.5, reactjs 18.2.0
 
 ```bash
 # clonar repositório
