@@ -29,12 +29,11 @@ A aplicação consiste em um site de preferência de livros e filmes, onde o usu
 ![Modelo Conceitual](DiagramaCasoDeUso.drawio.png)
 
 # Tecnologias utilizadas
-
 ## Front end
 - HTML / CSS / JS 
 - ReactJS
 - React Native
-- 
+
 ## Implantação em produção
 - Front end web: ReactJS 
 - API de livros: The New York Times e GoogleBooks
@@ -60,8 +59,3 @@ cd front-end
 Luis Antonio Benjamim Flexa
 
 www.linkedin.com/in/luis-antonio-benjamim-flexa
-
-
-
-
->>>>>>> da8b681275a33436f7095a17d7b78a349ec42573
