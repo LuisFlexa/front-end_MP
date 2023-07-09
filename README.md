@@ -1,7 +1,3 @@
-# projeto_MP
-
-repositório remoto do projeto de MP
-=======
 # Projeto MP 
 [![NPM](https://img.shields.io/npm/l/react)](https://github.com/LuisFlexa/projeto_MP/blob/main/LICENSE) 
 
@@ -12,9 +8,16 @@ BookWise é uma aplicação web construída através da utilização de local st
 A aplicação consiste em um site de preferência de livros e filmes, onde o usuário irá escolher suas preferências e com base nelas será aplicado um algoritmo de match para recomendar os filmes ou livros que possam satisfazer o gosto do usuário, além de um chat que funciona para usuários com gostos semelhantes, fazendo com que as pessoas conheçam outras com gostos parecidos.
 
 ## Layout web
-![Web 1](https://github.com/acenelio/assets/raw/main/sds1/web1.png)
-
-![Web 2](https://github.com/acenelio/assets/raw/main/sds1/web2.png)
+### Página de login
+![Web 1](PaginaDeLogin.png)
+### Página de preferências
+![Web 2](PaginaDePreferencias.png)
+### Página inicial
+![Web 3](PaginaInicial.png)
+### Página do chat
+![Web 4](Chat.png)
+### Página de recomendações 
+![Web 5](Recomendacoes.png)
 
 ## Diagrama de Models
 ![Modelo Conceitual](DiagramaDasModels.png)
@@ -40,7 +43,29 @@ A aplicação consiste em um site de preferência de livros e filmes, onde o usu
 - API de filmes: Imdb
 
 # Como executar o projeto
-Para executar o projeto, temos baixar o reporistório do projeto e instalar o nodejs. Para a instalação, abra o terminal e digite "sudo apt install nodejs". Ao instalar, vá para o diretório do projeto, abra o terminal e digite "npm start".
+Para executar o projeto, temos baixar o reporistório do projeto e temos que instalar o o node, npm e o pnpm. Para instalar os três, abra o terminal e digite:
+```bash
+# verificar atualizações de sistema
+sudo apt update
+
+#atualizar o sistema caso tenham atualizações
+sudo apt upgrade
+
+# instalar o nodejs
+sudo apt install nodejs
+
+# instalar o npm
+sudo apt install npm
+
+# instalar o curl
+sudo apt-get install curl
+
+# utilização do curl para a instalação do pnpm
+curl -fsSL https://get.pnpm.io/install.sh | sh -
+
+```
+
+Após a instalação dos programas, vá para o diretório do projeto, abra o terminal e digite "npm start".
 
 ## Front end
 Pré-requisitos: npm 9.5.1, node 18.16.0, pnpm 8.6.5, reactjs 18.2.0
