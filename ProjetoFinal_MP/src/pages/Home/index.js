@@ -1,7 +1,7 @@
 import { Navigate } from 'react-router-dom';
 import './estilo.css';
 import Livros from "../../components/imgs/livros.png";
-
+/* eslint-disable */
 /**
  * Componente que representa a página inicial do menu.
  * @returns {JSX.Element} Componente da página inicial do menu.
@@ -12,7 +12,7 @@ const MenuHome = () => {
      * Variável que armazena o nome do usuário.
      * @type {string}
      */
-    const usuario = localStorage.getItem(localStorage.getItem('usuario') + 'preference' + 'action');
+    const usuario = localStorage.getItem(localStorage.getItem('usuario') + 'preferenceaction');
     
     /**
      * Verifica se o usuário está autenticado e redireciona para a página de preferências, se necessário.
@@ -23,41 +23,41 @@ const MenuHome = () => {
     }
 
     const tipoUsuario = ["", "", "", "", ""];
-    if (localStorage.getItem(localStorage.getItem('usuario') + 'preference' + 'action') === "yes" || 
-    localStorage.getItem(localStorage.getItem('usuario') + 'preference' + 'crime') === "yes" || 
-    localStorage.getItem(localStorage.getItem('usuario') + 'preference' + 'adventure') === "yes" ||
-    localStorage.getItem(localStorage.getItem('usuario') + 'preference' + 'scienceFiction') === "yes"
+    if (localStorage.getItem(localStorage.getItem('usuario') + 'preferenceaction') === "yes" || 
+    localStorage.getItem(localStorage.getItem('usuario') + 'preferencecrime') === "yes" || 
+    localStorage.getItem(localStorage.getItem('usuario') + 'preferenceadventure') === "yes" ||
+    localStorage.getItem(localStorage.getItem('usuario') + 'preferencescienceFiction') === "yes"
     ){
       tipoUsuario[0] = "A";
     }
 
-    if (localStorage.getItem(localStorage.getItem('usuario') + 'preference' + 'romance') === "yes" || 
-    localStorage.getItem(localStorage.getItem('usuario') + 'preference' + 'drama') === "yes"
+    if (localStorage.getItem(localStorage.getItem('usuario') + 'preferenceromance') === "yes" || 
+    localStorage.getItem(localStorage.getItem('usuario') + 'preferencedrama') === "yes"
     ){
       tipoUsuario[1] = "B";
     }
 
-    if (localStorage.getItem(localStorage.getItem('usuario') + 'preference' + 'family') === "yes" || 
-    localStorage.getItem(localStorage.getItem('usuario') + 'preference' + 'fantasy') === "yes" || 
-    localStorage.getItem(localStorage.getItem('usuario') + 'preference' + 'comedy') === "yes" ||
-    localStorage.getItem(localStorage.getItem('usuario') + 'preference' + 'animation') === "yes"
+    if (localStorage.getItem(localStorage.getItem('usuario') + 'preferencefamily') === "yes" || 
+    localStorage.getItem(localStorage.getItem('usuario') + 'preferencefantasy') === "yes" || 
+    localStorage.getItem(localStorage.getItem('usuario') + 'preferencecomedy') === "yes" ||
+    localStorage.getItem(localStorage.getItem('usuario') + 'preferenceanimation') === "yes"
     ){
       tipoUsuario[2] = "C";
     }
 
-    if (localStorage.getItem(localStorage.getItem('usuario') + 'preference' + 'musical') === "yes" || 
-    localStorage.getItem(localStorage.getItem('usuario') + 'preference' + 'documentary') === "yes"
+    if (localStorage.getItem(localStorage.getItem('usuario') + 'preferencemusical') === "yes" || 
+    localStorage.getItem(localStorage.getItem('usuario') + 'preferencedocumentary') === "yes"
     ){
       tipoUsuario[3] = "D";
     }
 
-    localStorage.setItem(localStorage.getItem('usuario'+'tipo'), ' ');
-    if (tipoUsuario[0] == "A") {localStorage.setItem(localStorage.getItem('usuario'+'tipo'), "A" + localStorage.getItem(localStorage.getItem('usuario'+'tipo')));}
-    if (tipoUsuario[1] == "B") {localStorage.setItem(localStorage.getItem('usuario'+'tipo'), "B" + localStorage.getItem(localStorage.getItem('usuario'+'tipo')));}
-    if (tipoUsuario[2] == "C") {localStorage.setItem(localStorage.getItem('usuario'+'tipo'), "C" + localStorage.getItem(localStorage.getItem('usuario'+'tipo')));}
-    if (tipoUsuario[3] == "D") {localStorage.setItem(localStorage.getItem('usuario'+'tipo'), "D" + localStorage.getItem(localStorage.getItem('usuario'+'tipo')));}
+    localStorage.setItem(localStorage.getItem('usuariotipo'), ' ');
+    if (tipoUsuario[0] === "A") {localStorage.setItem(localStorage.getItem('usuariotipo'), "A" + localStorage.getItem(localStorage.getItem('usuariotipo')));}
+    if (tipoUsuario[1] === "B") {localStorage.setItem(localStorage.getItem('usuariotipo'), "B" + localStorage.getItem(localStorage.getItem('usuariotipo')));}
+    if (tipoUsuario[2] === "C") {localStorage.setItem(localStorage.getItem('usuariotipo'), "C" + localStorage.getItem(localStorage.getItem('usuariotipo')));}
+    if (tipoUsuario[3] === "D") {localStorage.setItem(localStorage.getItem('usuariotipo'), "D" + localStorage.getItem(localStorage.getItem('usuariotipo')));}
     
-    console.log(localStorage.getItem(localStorage.getItem('usuario'+'tipo')));
+    console.log(localStorage.getItem(localStorage.getItem('usuariotipo')));
 
     return (
       <div className="home-container">

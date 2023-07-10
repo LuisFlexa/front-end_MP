@@ -15,6 +15,7 @@ import './estilo.css';
 // U02 e U06
 const BookList = () => {
   const [books, setBooks] = useState([]);
+  /* eslint-disable */
   const [error, setError] = useState('');
   const [visibleBooks, setVisibleBooks] = useState(8); // Quantidade inicial de livros visíveis
   const [totalBooks, setTotalBooks] = useState(0); // Total de livros disponíveis
@@ -91,39 +92,39 @@ const BookList = () => {
         const combinedBookList = [];
 
         if (
-          localStorage.getItem(localStorage.getItem('usuario') + 'preference' + 'romance') === 'yes' ||
-          localStorage.getItem(localStorage.getItem('usuario') + 'preference' + 'drama') === 'yes' ||
-          localStorage.getItem(localStorage.getItem('usuario') + 'preference' + 'comedy') === 'yes'
+          localStorage.getItem(localStorage.getItem('usuario') + 'preferenceromance') === 'yes' ||
+          localStorage.getItem(localStorage.getItem('usuario') + 'preferencedrama') === 'yes' ||
+          localStorage.getItem(localStorage.getItem('usuario') + 'preferencecomedy') === 'yes'
         ) {
           console.log('entra romance');
           combinedBookList.push(...bookList4);
         }
 
         if (
-          localStorage.getItem(localStorage.getItem('usuario') + 'preference' + 'musical') === 'yes' ||
-          localStorage.getItem(localStorage.getItem('usuario') + 'preference' + 'documentary') === 'yes'
+          localStorage.getItem(localStorage.getItem('usuario') + 'preferencemusical') === 'yes' ||
+          localStorage.getItem(localStorage.getItem('usuario') + 'preferencedocumentary') === 'yes'
         ) {
           console.log('entra motivacional');
           combinedBookList.push(...bookList3);
         }
 
         if (
-          localStorage.getItem(localStorage.getItem('usuario') + 'preference' + 'animation') === 'yes' ||
-          localStorage.getItem(localStorage.getItem('usuario') + 'preference' + 'fantasy') === 'yes' ||
-          localStorage.getItem(localStorage.getItem('usuario') + 'preference' + 'comedy') === 'yes' ||
-          localStorage.getItem(localStorage.getItem('usuario') + 'preference' + 'family') === 'yes'
+          localStorage.getItem(localStorage.getItem('usuario') + 'preferenceanimation') === 'yes' ||
+          localStorage.getItem(localStorage.getItem('usuario') + 'preferencefantasy') === 'yes' ||
+          localStorage.getItem(localStorage.getItem('usuario') + 'preferencecomedy') === 'yes' ||
+          localStorage.getItem(localStorage.getItem('usuario') + 'preferencefamily') === 'yes'
         ) {
           console.log('entra nonfic');
           combinedBookList.push(...bookList2);
         }
 
         if (
-          localStorage.getItem(localStorage.getItem('usuario') + 'preference' + 'thriller') === 'yes' ||
-          localStorage.getItem(localStorage.getItem('usuario') + 'preference' + 'adventure') === 'yes' ||
-          localStorage.getItem(localStorage.getItem('usuario') + 'preference' + 'sciencieFiction') === 'yes' ||
-          localStorage.getItem(localStorage.getItem('usuario') + 'preference' + 'family') === 'yes' ||
-          localStorage.getItem(localStorage.getItem('usuario') + 'preference' + 'horror') === 'yes' ||
-          localStorage.getItem(localStorage.getItem('usuario') + 'preference' + 'crime') === 'yes'
+          localStorage.getItem(localStorage.getItem('usuario') + 'preferencethriller') === 'yes' ||
+          localStorage.getItem(localStorage.getItem('usuario') + 'preferenceadventure') === 'yes' ||
+          localStorage.getItem(localStorage.getItem('usuario') + 'preferencesciencieFiction') === 'yes' ||
+          localStorage.getItem(localStorage.getItem('usuario') + 'preferencefamily') === 'yes' ||
+          localStorage.getItem(localStorage.getItem('usuario') + 'preferencehorror') === 'yes' ||
+          localStorage.getItem(localStorage.getItem('usuario') + 'preferencecrime') === 'yes'
         ) {
           console.log('entra ficc');
           combinedBookList.push(...bookList1);

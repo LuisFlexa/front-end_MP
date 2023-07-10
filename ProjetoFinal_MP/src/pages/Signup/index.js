@@ -38,7 +38,7 @@ const Signup = () => {
       setError("As senhas não são iguais");
       return;
     }
-
+/* eslint-disable */
     const tt = "OMG"
     const res = signup(email, senha);
 

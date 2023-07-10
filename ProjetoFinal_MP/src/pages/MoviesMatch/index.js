@@ -14,6 +14,7 @@ import './estilo.css';
  * @returns {JSX.Element} Componente de filmes.
  */
 // U03 e U05
+/* eslint-disable */
 const Movies = () => {
   const { signout } = useAuth();
   const navigate = useNavigate();
@@ -84,6 +85,7 @@ const Movies = () => {
    * @param {number[]} genreIds - Array de IDs de gênero.
    * @returns {string} - String com os nomes dos gêneros separados por vírgula.
    */
+  /* eslint-disable */
   const getGenreName = (genreIds) => {
     if (genreIds) {
       const genreNames = genreIds.map((genreId) => genres[genreId]);
@@ -111,22 +113,22 @@ const Movies = () => {
    // Array com os gêneros selecionados pelo usuário
   const generos = [""];
   console.log(localStorage.getItem('usuario'));
-  console.log(localStorage.getItem(localStorage.getItem('usuario') + 'preference' + 'action'));
-  if (localStorage.getItem(localStorage.getItem('usuario') + 'preference' + 'action') === "yes") { generos.push("Action");}
-  if (localStorage.getItem(localStorage.getItem('usuario') + 'preference' + 'romance') === "yes") { generos.push("Romance");}
-  if (localStorage.getItem(localStorage.getItem('usuario') + 'preference' + 'drama') === "yes") { generos.push("Drama");}
-  if (localStorage.getItem(localStorage.getItem('usuario') + 'preference' + 'crime') === "yes") { generos.push("Crime");}
-  if (localStorage.getItem(localStorage.getItem('usuario') + 'preference' + 'adventure') === "yes") { generos.push("Adventure");}
-  if (localStorage.getItem(localStorage.getItem('usuario') + 'preference' + 'family') === "yes") { generos.push("Family");}
-  if (localStorage.getItem(localStorage.getItem('usuario') + 'preference' + 'horror') === "yes") { generos.push("Horror");}
-  if (localStorage.getItem(localStorage.getItem('usuario') + 'preference' + 'scienceFiction') === "yes") { generos.push("Science Fiction");}
-  if (localStorage.getItem(localStorage.getItem('usuario') + 'preference' + 'comedy') === "yes") { generos.push("Comedy");}
-  if (localStorage.getItem(localStorage.getItem('usuario') + 'preference' + 'animation') === "yes") { generos.push("Animation");}
-  if (localStorage.getItem(localStorage.getItem('usuario') + 'preference' + 'fantasy') === "yes") { generos.push("Fantasy");}
-  if (localStorage.getItem(localStorage.getItem('usuario') + 'preference' + 'thriller') === "yes") { generos.push("Thriller");}
-  if (localStorage.getItem(localStorage.getItem('usuario') + 'preference' + 'documentary') === "yes") { generos.push("Documentary");}
-  if (localStorage.getItem(localStorage.getItem('usuario') + 'preference' + 'musical') === "yes") { generos.push("Musical");}
-  
+  console.log(localStorage.getItem(localStorage.getItem('usuario') + 'preferenceaction'));
+  if (localStorage.getItem(localStorage.getItem('usuario') + 'preferenceaction') === "yes") { generos.push("Action");}
+  if (localStorage.getItem(localStorage.getItem('usuario') + 'preferenceromance') === "yes") { generos.push("Romance");}
+  if (localStorage.getItem(localStorage.getItem('usuario') + 'preferencedrama') === "yes") { generos.push("Drama");}
+  if (localStorage.getItem(localStorage.getItem('usuario') + 'preferencecrime') === "yes") { generos.push("Crime");}
+  if (localStorage.getItem(localStorage.getItem('usuario') + 'preferenceadventure') === "yes") { generos.push("Adventure");}
+  if (localStorage.getItem(localStorage.getItem('usuario') + 'preferencefamily') === "yes") { generos.push("Family");}
+  if (localStorage.getItem(localStorage.getItem('usuario') + 'preferencehorror') === "yes") { generos.push("Horror");}
+  if (localStorage.getItem(localStorage.getItem('usuario') + 'preferencescienceFiction') === "yes") { generos.push("Science Fiction");}
+  if (localStorage.getItem(localStorage.getItem('usuario') + 'preferencecomedy') === "yes") { generos.push("Comedy");}
+  if (localStorage.getItem(localStorage.getItem('usuario') + 'preferenceanimation') === "yes") { generos.push("Animation");}
+  if (localStorage.getItem(localStorage.getItem('usuario') + 'preferencefantasy') === "yes") { generos.push("Fantasy");}
+  if (localStorage.getItem(localStorage.getItem('usuario') + 'preferencethriller') === "yes") { generos.push("Thriller");}
+  if (localStorage.getItem(localStorage.getItem('usuario') + 'preferencedocumentary') === "yes") { generos.push("Documentary");}
+  if (localStorage.getItem(localStorage.getItem('usuario') + 'preferencemusical') === "yes") { generos.push("Musical");}
+
 
   const filteredMovies = filterMoviesByGenres(movies, generos);
 

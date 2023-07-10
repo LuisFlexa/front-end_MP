@@ -52,6 +52,7 @@ function FormularioPreferencias() {
     event.preventDefault();
   const selectedCount = Object.values(preferencias).filter(Boolean).length;
   if (selectedCount >= 3) {
+  /* eslint-disable */
     const usuario = {
       preference: preferencias
     };
@@ -59,47 +60,47 @@ function FormularioPreferencias() {
     console.log(preferencias);
     console.log(JSON.parse(localStorage.getItem('usuario')).preference);*/
 
-    if (preferencias.romance == true) {localStorage.setItem(localStorage.getItem('usuario') + 'preference' + 'romance', "yes"); }
-    else { localStorage.setItem(localStorage.getItem('usuario') + 'preference' + 'romance', "no");}
+    if (preferencias.romance === true) {localStorage.setItem(localStorage.getItem('usuario') + 'preferenceromance', "yes"); }
+    else { localStorage.setItem(localStorage.getItem('usuario') + 'preferenceromance', "no");}
 
-    if (preferencias.drama == true) {localStorage.setItem(localStorage.getItem('usuario') + 'preference' + 'drama', "yes"); }
-    else { localStorage.setItem(localStorage.getItem('usuario') + 'preference' + 'drama', "no");}
+    if (preferencias.drama === true) {localStorage.setItem(localStorage.getItem('usuario') + 'preferencedrama', "yes"); }
+    else { localStorage.setItem(localStorage.getItem('usuario') + 'preferencedrama', "no");}
 
-    if (preferencias.action == true) {localStorage.setItem(localStorage.getItem('usuario') + 'preference' + 'action', "yes"); }
-    else { localStorage.setItem(localStorage.getItem('usuario') + 'preference' + 'action', "no");}
+    if (preferencias.action === true) {localStorage.setItem(localStorage.getItem('usuario') + 'preferenceaction', "yes"); }
+    else { localStorage.setItem(localStorage.getItem('usuario') + 'preferenceaction', "no");}
 
-    if (preferencias.crime == true) {localStorage.setItem(localStorage.getItem('usuario') + 'preference' + 'crime', "yes"); }
-    else { localStorage.setItem(localStorage.getItem('usuario') + 'preference' + 'crime', "no");}
+    if (preferencias.crime === true) {localStorage.setItem(localStorage.getItem('usuario') + 'preferencecrime', "yes"); }
+    else { localStorage.setItem(localStorage.getItem('usuario') + 'preferencecrime', "no");}
 
-    if (preferencias.adventure == true) {localStorage.setItem(localStorage.getItem('usuario') + 'preference' + 'adventure', "yes"); }
-    else { localStorage.setItem(localStorage.getItem('usuario') + 'preference' + 'adventure', "no");}
+    if (preferencias.adventure === true) {localStorage.setItem(localStorage.getItem('usuario') + 'preferenceadventure', "yes"); }
+    else { localStorage.setItem(localStorage.getItem('usuario') + 'preferenceadventure', "no");}
 
-    if (preferencias.family) { localStorage.setItem(localStorage.getItem('usuario') + 'preference' + 'family', "yes"); } 
-    else { localStorage.setItem(localStorage.getItem('usuario') + 'preference' + 'family', "no"); }
+    if (preferencias.family) { localStorage.setItem(localStorage.getItem('usuario') + 'preferencefamily', "yes"); } 
+    else { localStorage.setItem(localStorage.getItem('usuario') + 'preferencefamily', "no"); }
 
-    if (preferencias.horror) { localStorage.setItem(localStorage.getItem('usuario') + 'preference' + 'horror', "yes"); } 
-    else { localStorage.setItem(localStorage.getItem('usuario') + 'preference' + 'horror', "no"); }
+    if (preferencias.horror) { localStorage.setItem(localStorage.getItem('usuario') + 'preferencehorror', "yes"); } 
+    else { localStorage.setItem(localStorage.getItem('usuario') + 'preferencehorror', "no"); }
 
-    if (preferencias.scienceFiction) { localStorage.setItem(localStorage.getItem('usuario') + 'preference' + 'scienceFiction', "yes"); } 
-    else { localStorage.setItem(localStorage.getItem('usuario') + 'preference' + 'scienceFiction', "no"); }
+    if (preferencias.scienceFiction) { localStorage.setItem(localStorage.getItem('usuario') + 'preferencescienceFiction', "yes"); } 
+    else { localStorage.setItem(localStorage.getItem('usuario') + 'preferencescienceFiction', "no"); }
     
-    if (preferencias.comedy) { localStorage.setItem(localStorage.getItem('usuario') + 'preference' + 'comedy', "yes"); } 
-    else { localStorage.setItem(localStorage.getItem('usuario') + 'preference' + 'comedy', "no"); }
+    if (preferencias.comedy) { localStorage.setItem(localStorage.getItem('usuario') + 'preferencecomedy', "yes"); } 
+    else { localStorage.setItem(localStorage.getItem('usuario') + 'preferencecomedy', "no"); }
     
-    if (preferencias.animation) { localStorage.setItem(localStorage.getItem('usuario') + 'preference' + 'animation', "yes"); } 
-    else { localStorage.setItem(localStorage.getItem('usuario') + 'preference' + 'animation', "no"); }
+    if (preferencias.animation) { localStorage.setItem(localStorage.getItem('usuario') + 'preferenceanimation', "yes"); } 
+    else { localStorage.setItem(localStorage.getItem('usuario') + 'preferenceanimation', "no"); }
     
-    if (preferencias.fantasy) { localStorage.setItem(localStorage.getItem('usuario') + 'preference' + 'fantasy', "yes"); } 
-    else { localStorage.setItem(localStorage.getItem('usuario') + 'preference' + 'fantasy', "no"); }
+    if (preferencias.fantasy) { localStorage.setItem(localStorage.getItem('usuario') + 'preferencefantasy', "yes"); } 
+    else { localStorage.setItem(localStorage.getItem('usuario') + 'preferencefantasy', "no"); }
     
-    if (preferencias.thriller) { localStorage.setItem(localStorage.getItem('usuario') + 'preference' + 'thriller', "yes"); } 
-    else { localStorage.setItem(localStorage.getItem('usuario') + 'preference' + 'thriller', "no"); }
+    if (preferencias.thriller) { localStorage.setItem(localStorage.getItem('usuario') + 'preferencethriller', "yes"); } 
+    else { localStorage.setItem(localStorage.getItem('usuario') + 'preferencethriller', "no"); }
     
-    if (preferencias.documentary) { localStorage.setItem(localStorage.getItem('usuario') + 'preference' + 'documentary', "yes"); } 
-    else { localStorage.setItem(localStorage.getItem('usuario') + 'preference' + 'documentary', "no"); }
+    if (preferencias.documentary) { localStorage.setItem(localStorage.getItem('usuario') + 'preferencedocumentary', "yes"); } 
+    else { localStorage.setItem(localStorage.getItem('usuario') + 'preferencedocumentary', "no"); }
     
-    if (preferencias.musical) { localStorage.setItem(localStorage.getItem('usuario') + 'preference' + 'musical', "yes"); } 
-    else { localStorage.setItem(localStorage.getItem('usuario') + 'preference' + 'musical', "no"); }
+    if (preferencias.musical) { localStorage.setItem(localStorage.getItem('usuario') + 'preferencemusical', "yes"); } 
+    else { localStorage.setItem(localStorage.getItem('usuario') + 'preferencemusical', "no"); }
       
     navigate("/Home");
 

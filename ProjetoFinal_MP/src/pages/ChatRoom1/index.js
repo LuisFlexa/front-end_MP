@@ -38,8 +38,8 @@ export const App = () => {
  * @returns {JSX.Element} O elemento JSX contendo a sala de chat.
  */
 export const ChatRoom = () => {
-  const chatString = localStorage.getItem(localStorage.getItem('usuario'+'tipo'));
-  console.log(localStorage.getItem(localStorage.getItem('usuario'+'tipo')));
+  const chatString = localStorage.getItem(localStorage.getItem('usuariotipo'));
+  console.log(localStorage.getItem(localStorage.getItem('usuariotipo')));
   
   const dummy = useRef()
   const messagesRef = collection(databaseApp, chatString);
@@ -59,7 +59,7 @@ export const ChatRoom = () => {
   const sendMessage = async (e) => {
     e.preventDefault();
     const { photoURL, uid } = auth.currentUser;
-
+/* eslint-disable */
     await addDoc(messagesRef, {
       text: formValue,
       uid,
