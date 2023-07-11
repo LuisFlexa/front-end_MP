@@ -9,27 +9,30 @@ A aplicação consiste em um site de preferência de livros e filmes, onde o usu
 
 ## Layout web
 ### Página de login
-![Web 1](PaginaDeLogin.png)
+![Web 1](png/PaginaDeLogin.png)
 ### Página de preferências
-![Web 2](PaginaDePreferencias.png)
+![Web 2](png/PaginaDePreferencias.png)
 ### Página inicial
-![Web 3](PaginaInicial.png)
+![Web 3](png/PaginaInicial.png)
 ### Página do chat
-![Web 4](Chat.png)
+![Web 4](png/Chat.png)
 ### Página de recomendações 
-![Web 5](Recomendacoes.png)
+![Web 5](png/Recomendacoes.png)
 
 ## Diagrama de Models
-![Modelo Conceitual](DiagramaDasModels.png)
+![Modelo Conceitual](Diagramas/DiagramaDasModels.png)
 
 ## Diagrama das Atividades Match
-![Modelo Conceitual](DiagramaAtividadesMatch.drawio.png)
+![Modelo Conceitual](Diagramas/DiagramaAtividadesMatch.drawio.png)
 
 ## Diagrama do Fluxo de Dados
-![Modelo Conceitual](DiagramaFluxoDeDados.drawio.png)
+![Modelo Conceitual](Diagramas/DiagramaFluxoDeDados.drawio.png)
 
 ## Diagrama dos Casos de Uso
-![Modelo Conceitual](DiagramaCasoDeUso.drawio.png)
+![Modelo Conceitual](Diagramas/DiagramaCasoDeUso.drawio.png)
+
+## Diagrama de sequência
+![Modelo COnceitual](Diagramas/DiagramaDeSequência.drawio.png)
 
 # Tecnologias utilizadas
 ## Front end
