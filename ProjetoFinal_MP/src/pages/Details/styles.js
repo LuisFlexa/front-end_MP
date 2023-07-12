@@ -9,6 +9,14 @@ h1 {
     margin: 3rem 0;
 }
 
+.page-wrapper {
+    position: absolute;
+    left: 200px;
+    overflow-x: hidden;
+    width: 1500px;
+    height: 100vh;
+}
+
 .movie {
     display: flex;
     align-items: center;

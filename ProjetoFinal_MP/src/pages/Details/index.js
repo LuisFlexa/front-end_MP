@@ -42,7 +42,7 @@ function Details(){
 
     return (
         <Container>
-            <div className="movie">
+            <div className="page-wrapper">
                 <img src={movie.image} alt={movie.sinopse}/>
                 <div className="details">
                     <h1><b>{movie.title}</b></h1>
